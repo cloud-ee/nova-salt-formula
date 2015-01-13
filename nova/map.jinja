@@ -104,9 +104,8 @@
 
   },
   "database": {
-    "connection":  (salt["pillar.get"]("keystone:db:driver") + "://nova:" + salt["pillar.get"]("nova:mysql:password") + "@"
-                   + salt["pillar.get"]("nova:mysql:ip", "localhost")
-                   + "/nova")
+        "connection": salt["pillar.get"]("nova:db:driver") + "://nova:" + salt["pillar.get"]("nova:db:password") + "@" + salt["pillar.get"]("nova:db:ip", "localhost") + "/nova",
+
   },
   "libvirt": {
     "virt_type": virt_type,
