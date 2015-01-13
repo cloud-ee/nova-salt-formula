@@ -1,16 +1,6 @@
 {% set name="nova" %}
 
 {{ name }}-db:
-{% if salt["pillar.get"](name+ ":db:driver") == 'postgresql' %}
-  pkg.installed:
-    - name: python-psycopg2
-  postgres_user.present:
-    - name: {{ name }}
-    - password: {{ salt["pillar.get"](name + ":db:password") }}
-  postgres_database.present:
-    - name: {{ name }}
-    - owner: {{ name }}
-{% else %}
   mysql_database.present:
     - name: {{ name }}
   mysql_user.present:
