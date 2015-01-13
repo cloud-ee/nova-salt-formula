@@ -1,4 +1,4 @@
-{%- from "openstack/map.jinja" import node with context %}
+{%- from "nova/map.jinja" import node with context %}
 {%- set name="nova" %}
 
 keystone_{{ name }}_user:
