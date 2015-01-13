@@ -28,6 +28,7 @@
                             "nova-network"],
     "compute_pkgs": ["nova-network",
                      "nova-api-metadata",
+	             "python-novaclient",
                      "nova-compute",
                      "nova-compute-" + salt["pillar.get"]("nova:config:libvirt:virt_type", virt_type),
                      ],
